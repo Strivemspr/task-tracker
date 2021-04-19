@@ -131,7 +131,7 @@ function App() {
           </>
         )}/> */}
 
-        <Route exact path="/">
+        <Route exact path={["/", "/task-tracker"]}>
           <Home/>
         </Route>
 
