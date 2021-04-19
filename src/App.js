@@ -135,7 +135,7 @@ function App() {
           <Home/>
         </Route>
 
-        <Route path='/about' component={About}/>
+        <Route path='/task-tracker/about' component={About}/>
         <Footer/>
       </div>
     </Router>
