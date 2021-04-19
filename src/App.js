@@ -36,17 +36,20 @@ function App() {
   //   }
   // ]
 
+  const jsonServer = 'https://my-json-server.typicode.com/Strivemspr/task-tracker/tasks/'
+  // 'http://localhost:8000/tasks/'
+  const [url, setUrl] = useState(jsonServer);
   const [tasks, setTasks] = useState([]);
   const [form, setForm] = useState(false);
 
   const fetchTasks = async () => {
-    const res = await fetch('http://localhost:8000/tasks');
+    const res = await fetch(url);
     const data = await res.json();
     return data
   }
 
   const fetchTask = async (id) => {
-    const res = await fetch(`http://localhost:8000/tasks/${id}`);
+    const res = await fetch(`${url}${id}`);
     const data = await res.json();
     return data
   }
@@ -64,7 +67,7 @@ function App() {
   const addTask = async (task) => {
     task.id = tasks[tasks.length - 1].id + 1;
 
-    const res = await fetch(`http://localhost:8000/tasks`, {
+    const res = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json' // Indicates the content 
@@ -80,7 +83,7 @@ function App() {
   }
 
   const deleteTask = async(id) => {
-    await fetch(`http://localhost:8000/tasks/${id}`, {
+    await fetch(`${url}${id}`, {
       method: 'DELETE',
     });
 
@@ -92,7 +95,7 @@ function App() {
     const updatedReminder = {...reminderToUpdate, reminder: !reminderToUpdate.reminder}
     console.log(reminderToUpdate);
 
-    const res = await fetch(`http://localhost:8000/tasks/${id}`, {
+    const res = await fetch(`${url}${id}`, {
       method: 'PUT',
       headers: {
         'Content-type': 'application/json',
