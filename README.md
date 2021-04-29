@@ -1,7 +1,6 @@
-https://my-json-server.typicode.com/Strivemspr/task-tracker/tasks/
 # Live Preview
 
-[Click Here - Task Tracker](https://github.com/facebook/create-react-app).
+[Click Here - Task Tracker](https://strivemspr.github.io/task-tracker/).
 
 # Getting Started with Create React App
 
